@@ -1,13 +1,15 @@
 {
   "extends": [
-    "eslint-config-airbnb",
+    "plugin:flowtype/recommended",
+    "eslint-config-airbnb"
   ],
   "plugins": [
+    "flowtype",
     "fp"
   ],
   "rules": {
     "fp/no-mutation": 2,
-    "prefer-arrow-callback": ["error", { "allowNamedFunctions": true }],
+    "prefer-arrow-callback": ["error", { "allowNamedFunctions": true }]
   },
   "env": {
     "node": true,

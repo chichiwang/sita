@@ -1,7 +1,8 @@
 {
   "presets": [
     "stage-2",
-    "react"
+    "react",
+    "flow"
   ],
   "plugins": [
     "transform-es2015-duplicate-keys",
