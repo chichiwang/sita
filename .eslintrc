@@ -1,7 +1,8 @@
 {
   "extends": [
     "plugin:flowtype/recommended",
-    "eslint-config-airbnb"
+    "eslint-config-airbnb",
+    "prettier"
   ],
   "plugins": [
     "flowtype",

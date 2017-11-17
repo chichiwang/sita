@@ -17,7 +17,9 @@
     "lint": "eslint -c .eslintrc ./src --ext .js,.jsx,.es6,.coffee",
     "lint:changed": "eslint -c .eslintrc --cache ./src --ext .js,.jsx,.es6,.coffee",
     "start": "nodemon --exec babel-node ./src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "test:changed": "jest -o",
+    "test:coverage": "jest --coverage"
   },
   "author": "Chi-chi Wang <chichi@wangchiyi.com>",
   "license": "ISC",
@@ -28,6 +30,7 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.0.2",
+    "babel-jest": "^21.2.0",
     "babel-plugin-transform-es2015-duplicate-keys": "^6.24.1",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
     "babel-preset-flow": "^6.23.0",
@@ -35,13 +38,33 @@
     "babel-preset-stage-2": "^6.24.1",
     "eslint": "^4.11.0",
     "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-prettier": "^2.7.0",
     "eslint-plugin-flowtype": "^2.39.1",
     "eslint-plugin-fp": "^2.3.0",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.4.0",
     "flow-bin": "^0.59.0",
+    "jest": "^21.2.1",
     "nodemon": "^1.12.1",
     "prettier": "^1.8.2"
+  },
+  "jest": {
+    "verbose": true,
+    "roots": [
+      "src"
+    ],
+    "collectCoverageFrom": [
+      "**/*.{js,jsx}",
+      "!**/node_modules/**"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    }
   }
 }
