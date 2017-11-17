@@ -1,0 +1,7 @@
+node_modules/
+dist/
+
+*.swp
+*.DS_STORE
+npm-debug.log
+npm-shrinkwrap.json

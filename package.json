@@ -1,0 +1,32 @@
+{
+  "name": "@chichiwang/sita",
+  "version": "0.0.1",
+  "description": "Koa2 powered Node server",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chichiwang/sita"
+  },
+  "scripts": {
+    "build": "npm run clean && npm run build:js",
+    "build:js": "NODE_ENV=production babel src --out-dir dist",
+    "clean": "rm -rf dist/",
+    "debug": "nodemon --exec babel-node debug ./src/index.js",
+    "start": "nodemon --exec babel-node ./src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Chi-chi Wang <chichi@wangchiyi.com>",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^2.3.0",
+    "koa": "^2.4.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-es2015-duplicate-keys": "^6.24.1",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "nodemon": "^1.12.1"
+  }
+}
