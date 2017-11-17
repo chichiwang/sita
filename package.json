@@ -12,6 +12,8 @@
     "build:js": "NODE_ENV=production babel src --out-dir dist",
     "clean": "rm -rf dist/",
     "debug": "nodemon --exec babel-node debug ./src/index.js",
+    "lint": "eslint -c .eslintrc ./src --ext .js,.jsx,.es6,.coffee",
+    "lint:changed": "eslint -c .eslintrc --cache ./src --ext .js,.jsx,.es6,.coffee",
     "start": "nodemon --exec babel-node ./src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -27,6 +29,12 @@
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
+    "eslint": "^4.11.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-fp": "^2.3.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.4.0",
     "nodemon": "^1.12.1"
   }
 }

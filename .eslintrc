@@ -1,0 +1,16 @@
+{
+  "extends": [
+    "eslint-config-airbnb",
+  ],
+  "plugins": [
+    "fp"
+  ],
+  "rules": {
+    "fp/no-mutation": 2,
+    "prefer-arrow-callback": ["error", { "allowNamedFunctions": true }],
+  },
+  "env": {
+    "node": true,
+    "jest": true
+  }
+}
