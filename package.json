@@ -2,7 +2,7 @@
   "name": "@chichiwang/sita",
   "version": "0.0.1",
   "description": "Koa2 powered Node server",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/chichiwang/sita"
@@ -16,10 +16,11 @@
     "flow": "flow",
     "lint": "eslint -c .eslintrc ./src --ext .js,.jsx,.es6,.coffee",
     "lint:changed": "eslint -c .eslintrc --cache ./src --ext .js,.jsx,.es6,.coffee",
-    "start": "nodemon --exec babel-node ./src/index.js",
+    "start": "node dist/index.js",
     "test": "jest",
     "test:changed": "jest -o",
-    "test:coverage": "jest --coverage"
+    "test:coverage": "jest --coverage",
+    "watch": "nodemon --exec babel-node ./src/index.js"
   },
   "author": "Chi-chi Wang <chichi@wangchiyi.com>",
   "license": "ISC",
