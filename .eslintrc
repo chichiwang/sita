@@ -9,8 +9,17 @@
     "fp"
   ],
   "rules": {
-    "fp/no-mutation": 2,
-    "prefer-arrow-callback": ["error", { "allowNamedFunctions": true }]
+    "fp/no-mutation": [2, {
+      "commonjs": true,
+      "allowThis": true,
+      "exceptions": [
+        { "object": "ctx", "property": "body" },
+        { "object": "ctx", "property": "koa" }
+      ]
+    }],
+    "prefer-arrow-callback": ["error", {
+      "allowNamedFunctions": true
+    }]
   },
   "env": {
     "node": true,

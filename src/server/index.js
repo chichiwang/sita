@@ -1,14 +1,10 @@
 /* @flow */
 import Koa from 'koa';
 
-async function requestHandler(ctx: Object): Promise<void> {
-  ctx.body = 'Hello, Sita!'; // eslint-disable-line fp/no-mutation
-}
-
-export default function createServer(): Object {
+export default function createServer(router: Function): Object {
   const server: Object = new Koa();
 
-  server.use(requestHandler);
+  server.use(router);
 
   return server;
 }
