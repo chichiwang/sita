@@ -12,7 +12,7 @@
     "build": "npm run clean && npm run build:js",
     "build:js": "NODE_ENV=production babel src --out-dir dist",
     "clean": "rm -rf dist/",
-    "debug": "nodemon --exec babel-node debug ./src/index.js",
+    "debug": "nodemon --exec babel-node debug ./src/server/index.js",
     "flow": "flow",
     "lint": "eslint -c .eslintrc ./src --ext .js,.jsx,.es6,.coffee",
     "lint:changed": "eslint -c .eslintrc --cache ./src --ext .js,.jsx,.es6,.coffee",
@@ -21,13 +21,16 @@
     "test:changed": "jest -o",
     "test:coverage": "jest --coverage",
     "watch": "npm run watch:server",
-    "watch:server": "nodemon --exec babel-node ./src/index.js"
+    "watch:server": "nodemon --exec babel-node ./src/server/index.js"
   },
   "author": "Chi-chi Wang <chichi@wangchiyi.com>",
   "license": "ISC",
   "dependencies": {
     "chalk": "^2.3.0",
     "koa": "^2.4.1",
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
     "universal-router": "^5.0.0"
   },
   "devDependencies": {
@@ -71,5 +74,9 @@
         "statements": 100
       }
     }
+  },
+  "nodemonConfig": {
+    "ext": "js jsx",
+    "watch": "src"
   }
 }

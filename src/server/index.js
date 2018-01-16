@@ -1,10 +1,12 @@
 /* @flow */
-import Koa from 'koa';
+import chalk from 'chalk';
 
-export default function createServer(router: Function): Object {
-  const server: Object = new Koa();
+import createServer from './create';
+import router from './router';
 
-  server.use(router);
+const server: Object = createServer(router);
+const port: Number = 8080;
 
-  return server;
-}
+// eslint-disable-next-line no-console
+console.log(chalk.green(`Server started at http://127.0.0.1:${port}...`));
+server.listen(port);

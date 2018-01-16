@@ -14,7 +14,8 @@
       "allowThis": true,
       "exceptions": [
         { "object": "ctx", "property": "body" },
-        { "object": "ctx", "property": "koa" }
+        { "object": "ctx", "property": "koa" },
+        { "property": "propTypes" },
       ]
     }],
     "prefer-arrow-callback": ["error", {
