@@ -20,7 +20,8 @@
     "test": "jest",
     "test:changed": "jest -o",
     "test:coverage": "jest --coverage",
-    "watch": "nodemon --exec babel-node ./src/index.js"
+    "watch": "npm run watch:server",
+    "watch:server": "nodemon --exec babel-node ./src/index.js"
   },
   "author": "Chi-chi Wang <chichi@wangchiyi.com>",
   "license": "ISC",
@@ -49,7 +50,9 @@
     "flow-bin": "^0.59.0",
     "jest": "^21.2.1",
     "nodemon": "^1.12.1",
-    "prettier": "^1.8.2"
+    "prettier": "^1.8.2",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.11.0"
   },
   "jest": {
     "verbose": true,
