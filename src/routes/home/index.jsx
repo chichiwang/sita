@@ -7,7 +7,7 @@ import RootComponent from './components';
 
 export default {
   name: 'home',
-  path: '',
+  path: '/',
   action(): Element<*> {
     return <RootComponent />;
   },

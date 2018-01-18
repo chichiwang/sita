@@ -7,7 +7,7 @@ import RootComponent from './components';
 
 export default {
   name: '404',
-  path: '(.*)',
+  path: '/404',
   action(ctx): Element<*> {
     if (ctx.koa) ctx.koa.response.status = 404;
     return <RootComponent ctx={ctx} />;
