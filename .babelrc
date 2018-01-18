@@ -5,6 +5,9 @@
     "flow"
   ],
   "plugins": [
+    ["module-resolver", {
+      "root": ["./src"]
+    }],
     "transform-es2015-duplicate-keys",
     "transform-es2015-modules-commonjs",
   ]

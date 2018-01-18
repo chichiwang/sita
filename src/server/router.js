@@ -1,7 +1,7 @@
 /* @flow */
 import ReactDomServer from 'react-dom/server';
 
-import createRouter from '../router';
+import createRouter from 'router';
 import template from './template';
 
 export default async function router(ctx: Object): Promise<void> {

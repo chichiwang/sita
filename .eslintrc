@@ -8,6 +8,12 @@
     "flowtype",
     "fp"
   ],
+  "settings": {
+    "import/resolver": {
+      "babel-module": {
+      }
+    }
+  },
   "rules": {
     "fp/no-mutation": [2, {
       "commonjs": true,
@@ -16,6 +22,7 @@
         { "object": "ctx", "property": "body" },
         { "object": "ctx", "property": "koa" },
         { "property": "propTypes" },
+        { "property": "defaultProps" }
       ]
     }],
     "prefer-arrow-callback": ["error", {
