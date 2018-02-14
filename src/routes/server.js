@@ -9,9 +9,7 @@ import path from 'path';
  * These directories will be excluded from the
  * server-side routes manifest.
  */
-const excludedPatterns = [
-  /^__.+__$/,
-];
+const excludedPatterns = [/^__.+__$/];
 
 /**
  * Given a directory name, checks if the directory
@@ -23,7 +21,8 @@ function notExcluded(dirname: string): boolean {
     pattern: RegExp,
   ): boolean {
     return Boolean(dirname.match(pattern)) || result;
-  }, false);
+  },
+  false);
 }
 
 /**
@@ -33,7 +32,6 @@ function notExcluded(dirname: string): boolean {
 function directories(file: string): boolean {
   return fs.statSync(path.join(__dirname, file)).isDirectory();
 }
-
 
 /**
  * Given a directory name, returns the default export

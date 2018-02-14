@@ -14,4 +14,4 @@ export default function template(contents: string): String {
       ${contents}
     </body>
   `;
-};
+}

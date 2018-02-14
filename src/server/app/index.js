@@ -14,4 +14,4 @@ export default function startAppServer() {
   // eslint-disable-next-line no-console
   console.log(chalk.green(`Server started at http://127.0.0.1:${port}...`));
   server.listen(port);
-};
+}

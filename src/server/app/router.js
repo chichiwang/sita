@@ -7,7 +7,7 @@ import Application from 'app';
 import createRouter from 'app/router';
 import template from './template';
 
-export default async function router(ctx: Object): Promise<void> {
+export default (async function router(ctx: Object): Promise<void> {
   const pathname: String = ctx.request.url;
   const routerInstance = createRouter();
 
@@ -35,4 +35,4 @@ export default async function router(ctx: Object): Promise<void> {
 
   // const resp: String = await routerInstance.resolve({ pathname, koa: ctx });
   // ctx.body = template(ReactDomServer.renderToString(resp));
-};
+});
