@@ -5,8 +5,8 @@
  * @module runtime
  */
 
-const BROWSER = 'browser';
-const NODE = 'node';
+export const BROWSER = 'browser';
+export const NODE = 'node';
 
 /**
  * Indicates if the current runtime is the browser
