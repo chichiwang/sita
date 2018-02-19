@@ -7,9 +7,11 @@ import Application from 'app/components/root';
  * Connects Application component to the store
  * to provide the route object.
  */
-function mapStateToProps(state) {
+function mapStateToProps(state, props) {
+  console.log('mapStateToProps', state, props);
   return {
     route: state.route,
+    ...props,
   };
 }
 
