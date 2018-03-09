@@ -1,4 +1,5 @@
 /* @flow */
+// TODO: Add JSDOC documentation
 import { isBrowser } from 'lib/runtime';
 
 const defaults = {
