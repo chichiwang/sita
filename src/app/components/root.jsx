@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { isBrowser } from 'lib/runtime';
 
 import createRouter, { createHandler } from 'app/router';
+import DefaultHeadTags from 'app/components/defaultHeadTags';
 import BaseTemplate from 'components/template';
 
 /**
@@ -43,6 +44,7 @@ class Application extends Component {
 
     return (
       <BaseTemplate>
+        <DefaultHeadTags />
         <pre>
           { JSON.stringify(route, null, 2) }
         </pre>
