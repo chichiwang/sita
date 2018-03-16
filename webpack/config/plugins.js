@@ -2,7 +2,11 @@
 const webpack = require('webpack');
 const ManifestPlugin = require('webpack-manifest-plugin');
 
-const sharedPlugins = [];
+const sharedPlugins = [
+  new ManifestPlugin({
+    fileName: 'config/manifest.json',
+  }),
+];
 
 const development = [
   ...sharedPlugins,
@@ -11,7 +15,6 @@ const development = [
 const production = [
   ...sharedPlugins,
   new webpack.optimize.UglifyJsPlugin(),
-  new ManifestPlugin({ filename: 'manifest.json' }),
 ];
 
 module.exports = {
