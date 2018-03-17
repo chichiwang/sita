@@ -4,6 +4,8 @@
 import fs from 'fs';
 import path from 'path';
 
+const routesDir = path.join(__dirname, '../../routes');
+
 /**
  * A list of patterns for excluded directories.
  * These directories will be excluded from the
@@ -27,23 +29,23 @@ function notExcluded(dirname: string): boolean {
 
 /**
  * Given a file name, checks if the file is a directory within
- * the current module-directory `/src/routes`.
+ * the routes directory `/src/routes`.
  */
 function directories(file: string): boolean {
-  return fs.statSync(path.join(__dirname, file)).isDirectory();
+  return fs.statSync(path.join(routesDir, file)).isDirectory();
 }
 
 /**
  * Given a directory name, returns the default export
- * of the directory relative to this module-directory
+ * of the directory relative to the routes directory
  * `/src/routes`.
  */
 function routeConfig(dir: string): Object {
-  return require(`./${dir}`).default;
+  return require(path.join(routesDir, dir)).default;
 }
 
 const routes: Array<Object> = fs
-  .readdirSync(__dirname)
+  .readdirSync(routesDir)
   .filter(directories)
   .filter(notExcluded)
   .map(routeConfig);

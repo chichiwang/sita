@@ -1,6 +1,5 @@
 {
   "presets": [
-    "stage-2",
     "react",
     "flow"
   ],
@@ -11,6 +10,10 @@
     "transform-es2015-duplicate-keys",
     "transform-es2015-modules-commonjs",
     "syntax-dynamic-import",
+    "transform-class-properties",
+    "transform-object-rest-spread",
+    "syntax-trailing-function-commas",
+    "transform-exponentiation-operator",
   ],
   "env": {
     "server": {

@@ -1,5 +1,4 @@
 /* eslint-disable import/no-extraneous-dependencies */
-const webpack = require('webpack');
 const ManifestPlugin = require('webpack-manifest-plugin');
 
 const sharedPlugins = [
@@ -14,7 +13,6 @@ const development = [
 
 const production = [
   ...sharedPlugins,
-  new webpack.optimize.UglifyJsPlugin(),
 ];
 
 module.exports = {

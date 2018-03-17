@@ -9,6 +9,7 @@ module.exports = {
   resolve,
   plugins,
   entry,
+  mode: 'development',
   module: {
     rules,
   },

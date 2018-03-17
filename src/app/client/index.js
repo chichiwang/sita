@@ -1,9 +1,10 @@
 /* @flow */
+import getManifest from 'app/manifest';
 
 /**
  * Load the router, render to page
  */
-console.log('APP CLIENT MOUNTED');
+console.log('APP CLIENT MOUNTED', getManifest);
 
 /* TODO:
  * 1. Retrieve routes config (API/GlobalObject/static file?)

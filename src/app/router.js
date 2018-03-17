@@ -1,7 +1,7 @@
 /* @flow */
 import Router5 from 'router5';
 
-import routes from 'routes/server';
+import routes from 'server/app/routes';
 import Actions from 'app/actions';
 
 const routerConfig: Object = {

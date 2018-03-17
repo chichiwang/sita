@@ -9,11 +9,16 @@ const client = path.join(app, 'client');
 
 const routes = path.join(src, 'routes');
 
+const server = {
+  app: path.join(src, 'server', 'app'),
+};
+
 module.exports = {
   app,
   assets,
   client,
   root,
   routes,
+  server,
   src,
 };
