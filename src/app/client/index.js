@@ -1,10 +1,10 @@
 /* @flow */
-import getManifest from 'app/manifest';
+import config from 'app/config';
 
 /**
  * Load the router, render to page
  */
-console.log('APP CLIENT MOUNTED', getManifest);
+console.log('APP CLIENT MOUNTED', config.fetch);
 
 /* TODO:
  * 1. Retrieve routes config (API/GlobalObject/static file?)
@@ -15,4 +15,4 @@ console.log('APP CLIENT MOUNTED', getManifest);
  * 3. Renders the app to the page (set up webpack configs)
  *
  * Note: App will handle async retrieval of bundles using dynamic import
- */ 
+ */

@@ -11,4 +11,4 @@ export default function env(envVar: string): string | void {
 
   const envVal = process.env[envVar];
   return envVal === 'undefined' ? defaults[envVar] : envVal;
-};
+}

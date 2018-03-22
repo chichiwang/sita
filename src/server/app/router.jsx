@@ -15,7 +15,7 @@ import template from './template';
  */
 export default async function router(ctx: Object): Promise<void> {
   const pathname: String = ctx.request.url;
-  const routerInstance = createRouter();
+  const routerInstance = await createRouter();
   const routeHandler = createHandler(store.dispatch, function setBody() {
     const app = renderToString(<Application initialPath={pathname} />);
     ctx.body = template(app);

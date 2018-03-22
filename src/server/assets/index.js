@@ -28,4 +28,6 @@ app.use(proxyRouter);
 app.listen(port);
 
 // eslint-disable-next-line no-console
-console.log(chalk.green(`Assets server started at http://127.0.0.1:${port}...`));
+console.log(
+  chalk.green(`Assets server started at http://127.0.0.1:${port}...`),
+);
