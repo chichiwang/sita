@@ -81,11 +81,11 @@ export function createHandler(dispatch, callback) {
  * Returns a cloned router, using the fixed
  * configurations defined in `routerConfig`
  */
-export default (async function createRouter() {
+export default async function createRouter() {
   try {
     const routerInstance = await fetchRouter();
     return routerInstance.clone();
   } catch (err) {
     throw err;
   }
-});
+};

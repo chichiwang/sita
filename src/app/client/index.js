@@ -1,10 +1,13 @@
 /* @flow */
-import config from 'app/config';
+import createRouter from 'app/router';
+
+createRouter().then(function routerRetrieved(router) {
+  console.log('router', router);
+});
 
 /**
  * Load the router, render to page
  */
-console.log('APP CLIENT MOUNTED', config.fetch);
 
 /* TODO:
  * 1. Retrieve routes config (API/GlobalObject/static file?)
