@@ -19,6 +19,7 @@ const proxyRouter = KoaProxy({ host: webpackDevServerHost });
  * the next Koa middleware if file not found
  */
 async function assetsRouter(ctx, next) {
+  ctx.set('Access-Control-Allow-Origin', '*');
   await KoaStatic(assetsDir)(ctx, next);
   if (ctx.body === undefined) await next();
 }

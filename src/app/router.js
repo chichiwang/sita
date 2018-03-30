@@ -1,7 +1,7 @@
 /* @flow */
 import Router5 from 'router5';
 
-import config from 'app/config';
+import { fetchConfig } from 'app/config';
 import Actions from 'app/actions';
 import { isNode } from 'lib/runtime';
 
@@ -17,7 +17,9 @@ const routerConfig: Object = {
 function initialRouter(): Object | void {
   if (isNode) {
     // eslint-disable-next-line global-require
-    return new Router5(require('server/app/routes').default, routerConfig);
+    const routes = require('server/app/routes').default;
+    console.log('routes', routes);
+    return new Router5(routes, routerConfig);
   }
 
   return undefined;
@@ -44,7 +46,7 @@ function routerFetcher(): Function {
         resolve(router);
       } else {
         try {
-          const routes = await config.fetch('routes');
+          const routes = await fetchConfig('routes');
           // eslint-disable-next-line fp/no-mutation
           router = new Router5(routes, routerConfig);
           resolve(router);

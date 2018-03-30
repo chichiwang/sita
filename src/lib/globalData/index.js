@@ -1,6 +1,12 @@
 /* @flow */
 import {isBrowser} from 'lib/runtime';
-import { isObject, isArray, isString } from 'lib/typecheck';
+import {
+  isArray,
+  isGlobal,
+  isObject,
+  isString,
+  isWindow,
+} from 'lib/typecheck';
 
 const separator = '.';
 const globalObj = isBrowser ? window : global;
@@ -17,7 +23,8 @@ const globalObj = isBrowser ? window : global;
  * getData('foo.bar.baz.throw'); // undefined
  */
 function getGlobalData(keychain: string, parentObj: Object = globalObj): any {
-  if (!isObject(parentObj)) return undefined;
+  const invalidParent = !isObject(parentObj) && !isWindow(parentObj) && !isGlobal(parentObj);
+  if (invalidParent) return undefined;
 
   const keyMap = keychain.split(separator);
   const currVal = parentObj[keyMap[0]];

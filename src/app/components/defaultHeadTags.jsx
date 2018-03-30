@@ -5,9 +5,9 @@ import Helmet from 'react-helmet';
 
 import config from 'app/config';
 import env from 'lib/env';
+import data from 'lib/globalData';
 import store from 'app/store';
 
-const globalInitialStateVar = 'ReduxInitialState';
 const assetsPath = config[env('NODE_ENV')].servers.assets;
 
 const defaultBundleNames = ['app.js'];
@@ -77,26 +77,29 @@ class DefaultHeadTags extends Component {
   }
 
   /**
-   * Returns a script tag that sets the store state
-   * in the global scope when this component has not
-   * yet mounted. Returns null when this component
-   * has mounted.
+   * Returns a script tag containing the provided `script`.
+   * Only returns the script tag on the initial mounting of
+   * this component.
    */
-  setInitialState() {
+  initialScriptTag(script: string): Element | null {
     if (this.state.mounted) return null;
     return (
       <script type="text/javascript">
-        { `const ${globalInitialStateVar} = ${JSON.stringify(store.getState())}` }
+        { script }
       </script>
     );
   }
 
   render() {
+    const initialState = data.set(config.variables.state, store.getState());
+    const nodeEnv = data.set(`${config.variables.env}.NODE_ENV`, env('NODE_ENV'));
+
     return (
       <Helmet>
         <title>{config.title}</title>
+        { this.initialScriptTag(initialState) }
+        { this.initialScriptTag(nodeEnv) }
         { this.defaultBundleTags() }
-        { this.setInitialState() }
         <html lang={config.lang} />
       </Helmet>
     );

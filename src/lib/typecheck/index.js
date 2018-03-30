@@ -10,6 +10,7 @@ const types: string[] = [
   'Date',
   'Function',
   'GeneratorFunction',
+  'Global',
   'Null',
   'Number',
   'Object',
@@ -17,6 +18,7 @@ const types: string[] = [
   'RegExp',
   'String',
   'Undefined',
+  'Window',
 ];
 
 /**

@@ -1,4 +1,5 @@
 const entry = require('./config/entry');
+const externals = require('./config/externals');
 const plugins = require('./config/plugins').development;
 const resolve = require('./config/resolve');
 const rules = require('./config/rules');
@@ -9,6 +10,7 @@ module.exports = {
   resolve,
   plugins,
   entry,
+  externals,
   mode: 'development',
   module: {
     rules,

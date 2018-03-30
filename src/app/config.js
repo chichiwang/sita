@@ -1,12 +1,15 @@
 /* @flow */
 import fetch from 'isomorphic-fetch';
-import env from 'lib/env';
 
 const config = {
   title: 'Sita Boilerplate',
   lang: 'en',
-  // eslint-disable-next-line no-use-before-define
-  fetch: configFetcher(),
+
+  variables: {
+    state: 'Sita.state',
+    env: 'Sita.env',
+  },
+
   development: {
     servers: {
       assets: 'http://127.0.0.1:8001',
@@ -19,10 +22,14 @@ const config = {
   },
 };
 
+export default config;
+
 /**
  * Returns a function used to get a JSON file config
  */
 function configFetcher(): Function {
+  // eslint-disable-next-line global-require
+  const env = require('lib/env').default;
   const runtime = env('NODE_ENV');
   const configs = {};
 
@@ -59,4 +66,4 @@ function configFetcher(): Function {
   };
 }
 
-export default config;
+export const fetchConfig = configFetcher();

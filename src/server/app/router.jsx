@@ -2,7 +2,7 @@
 import React from 'react';
 
 import Application from 'app';
-import config from 'app/config';
+import { fetchConfig } from 'app/config';
 import store from 'app/store';
 import createRouter, { createHandler } from 'app/router';
 import renderToString from './renderToString';
@@ -18,7 +18,7 @@ function manifestFetcher() {
       } else {
         try {
           // eslint-disable-next-line fp/no-mutation
-          manifest = await config.fetch('manifest');
+          manifest = await fetchConfig('manifest');
           resolve(manifest);
         } catch (err) {
           reject(err);
