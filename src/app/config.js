@@ -4,6 +4,7 @@ import fetch from 'isomorphic-fetch';
 const config = {
   title: 'Sita Boilerplate',
   lang: 'en',
+  containerId: 'App-Root',
 
   variables: {
     state: 'Sita.state',

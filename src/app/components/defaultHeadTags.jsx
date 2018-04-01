@@ -84,7 +84,7 @@ class DefaultHeadTags extends Component {
   initialScriptTag(script: string): Element | null {
     if (this.state.mounted) return null;
     return (
-      <script type="text/javascript">
+      <script defer type="text/javascript">
         { script }
       </script>
     );

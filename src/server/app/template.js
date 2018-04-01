@@ -1,4 +1,5 @@
 /* @flow */
+import config from 'app/config';
 import type { PageObject } from './renderToString';
 
 /**
@@ -10,11 +11,9 @@ export default function template(page: PageObject): String {
   return `
     <!doctype HTML>
     <html ${htmlAttributes}>
-      <head>
-        ${headTags}
-      </head>
+      <head>${headTags}</head>
       <body ${bodyAttributes}>
-        ${app}
+        <div id="${config.containerId}">${app}</div>
       </body>
     </html>
   `;

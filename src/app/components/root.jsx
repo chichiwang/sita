@@ -28,19 +28,6 @@ class Application extends Component {
     }).isRequired,
   };
 
-  constructor(props: Object): void {
-    super(props);
-    if (isBrowser) this.initRouter();
-  }
-
-  /**
-   * Initialize the router instance
-   */
-  initRouter: Function = (): void => {
-    this.router = createRouter();
-    this.router.start(this.props.initialPath, createHandler(this.props.dispatch));
-  }
-
   render(): Element {
     const { manifest, route } = this.props;
 
