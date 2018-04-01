@@ -31,7 +31,13 @@
     }],
     "prefer-arrow-callback": ["error", {
       "allowNamedFunctions": true
-    }]
+    }],
+    "no-underscore-dangle": [
+      "error",
+      {
+        "allow": ["__REDUX_DEVTOOLS_EXTENSION__"],
+      }
+    ],
   },
   "env": {
     "browser": true,
