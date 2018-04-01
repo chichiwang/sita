@@ -41,7 +41,7 @@ export default async function router(ctx: Object): Promise<void> {
   const manifest = await fetchManifest();
   const routerInstance = await createRouter();
   const routeHandler = createHandler(store.dispatch, function setBody() {
-    const app = renderToString(<Application initialPath={pathname} manifest={manifest} />);
+    const app = renderToString(<Application manifest={manifest} />);
     ctx.body = template(app);
   });
 

@@ -11,11 +11,10 @@ Promise.all([createRouter(), fetchConfig('manifest')])
   .then(function initApp(results) {
     const [router, manifest] = results;
     const routeState = store.getState().route;
-    const pathname = routeState.path;
     const routeHandler = createHandler(store.dispatch);
 
     router.start(routeState, routeHandler);
 
     const container = document.getElementById(config.containerId);
-    ReactDOM.hydrate(<Application initialPath={pathname} manifest={manifest} />, container);
+    ReactDOM.hydrate(<Application manifest={manifest} />, container);
   });

@@ -4,9 +4,7 @@ import PropTypes from 'prop-types';
 
 import type { Element } from 'react';
 
-import createRouter, { createHandler } from 'app/router';
 import DefaultHeadTags from 'app/components/defaultHeadTags';
-import { isBrowser } from 'lib/runtime';
 import BaseTemplate from 'components/template';
 
 /**
@@ -16,8 +14,6 @@ import BaseTemplate from 'components/template';
  */
 class Application extends Component {
   static propTypes: Object = {
-    dispatch: PropTypes.func.isRequired,
-    initialPath: PropTypes.string.isRequired,
     manifest: PropTypes.objectOf(PropTypes.string).isRequired,
     route: PropTypes.shape({
       name: PropTypes.string.isRequired,

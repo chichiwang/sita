@@ -11,9 +11,8 @@ import ConnectedApplication from './components/connected/root';
  * Connects the store Provider to the root presentation
  * component.
  */
-export default function Application({ initialPath, manifest }) {
+export default function Application({ manifest }) {
   const applicationProps = {
-    initialPath,
     manifest,
   };
 
@@ -25,6 +24,5 @@ export default function Application({ initialPath, manifest }) {
 };
 
 Application.propTypes = {
-  initialPath: PropTypes.string.isRequired,
   manifest: PropTypes.objectOf(PropTypes.string).isRequired,
 };
